@@ -1,0 +1,19 @@
+{
+  "name": "coolbot",
+  "version": "1.0.0",
+  "description": "Bot de la Taverne des Gens Cools",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Szrayer",
+  "license": "MIT",
+  "dependencies": {
+    "ban": "0.0.0",
+    "catch": "^1.0.48",
+    "discord.js": "^12.3.1",
+    "ms": "^2.1.2",
+    "tag": "^0.4.16",
+    "user": "0.0.0"
+  }
+}
