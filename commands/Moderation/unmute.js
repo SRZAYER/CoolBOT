@@ -10,7 +10,7 @@ module.exports.run = (client, message, args) => {
 
   const embed = new MessageEmbed()
     .setAuthor(`[UNMUTE] ${user.user.tag}`, user.user.avatarURL())
-    .setColor("#fcf700")
+    .setColor("#287db5")
     .setDescription(`**Utilisateur**: ${user.user.tag}\n**Moderateur**: ${message.author.tag}\n**Action**: unmute`)
     .setThumbnail(user.user.avatarURL())
     .setTimestamp()

@@ -6,8 +6,12 @@ const categoryList = readdirSync('./commands');
 module.exports.run = (client, message, args) => {
   if (!args.length) {
     const embed = new MessageEmbed()
+      .setAuthor("Commandes de CoolBOT", client.user.avatarURL())
       .setColor("#a38659")
-      .addField("Liste des commandes", `Liste de toutes les sous-catégories disponnibles et leurs commandes.\nPour plus d'informations sur une commande, tapez \`${PREFIX}help <command_name>\`.`)
+      .setThumbnail(client.user.avatarURL())
+      .addField("Plus d'infos, tapez :",`\`${PREFIX}help <command_name>\`.`)
+      .setTimestamp()
+      .setFooter(client.user.username);
 
     for (const category of categoryList) {
       embed.addField(
@@ -23,9 +27,12 @@ module.exports.run = (client, message, args) => {
 
     const embed = new MessageEmbed()
       .setColor("#a38659")
+      .setThumbnail(client.user.avatarURL())
       .setTitle(`\`${command.help.name}\``)
       .addField("Description", `${command.help.description} (Cooldown: ${command.help.cooldown} secs)`)
       .addField("Utilisation", command.help.usage ? `${PREFIX}${command.help.name} ${command.help.usage}` : `${PREFIX}${command.help.name}`, true)
+      .setTimestamp()
+      .setFooter(client.user.username)
 
     if (command.help.aliases.length > 1) embed.addField("Alias", `${command.help.aliases.join(', ')}`, true );
     return message.channel.send(embed);
