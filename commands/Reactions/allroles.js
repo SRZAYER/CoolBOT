@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (client, message, args) => {
@@ -23,14 +24,4 @@ const embed = new MessageEmbed()
   })
 };
 
-module.exports.help = {
- name: "allroles",
- aliases: ["allroles"],
- category: 'reactions',
- description: "Renvoie un message avec des reactions !",
- cooldown: 3,
- usage: "",
- isUserAdmin: false,
- permissions: true,
- args: false,
-};
+module.exports.help = MESSAGES.COMMANDS.REACTIONS.ALLROLES;

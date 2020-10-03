@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message, args) => {
@@ -19,14 +20,4 @@ module.exports.run = (client, message, args) => {
   client.channels.cache.get("757260841031565497").send(embed);
 };
 
-module.exports.help = {
-  name: "unmute",
-  aliases: ["unmute"],
-  category: 'moderation',
-  description: "Unmute un utilisateur",
-  cooldown: 3,
-  usage: "<@user>",
-  isUserAdmin: true,
-  permissions: true,
-  args: true,
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.UNMUTE;

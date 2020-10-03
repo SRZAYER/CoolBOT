@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
@@ -22,14 +23,4 @@ module.exports.run = async (client, message, args) => {
   client.channels.cache.get("757260841031565497").send(embed);
 };
 
-module.exports.help = {
-  name: "clear",
-  aliases: ["clear"],
-  category: 'moderation',
-  description: "Clear un nombre de message spécifié",
-  cooldown: 3,
-  usage: "<nbr_message>",
-  isUserAdmin: false,
-  permissions: true,
-  args: true,
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.CLEAR;

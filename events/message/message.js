@@ -2,6 +2,7 @@ const { Collection } = require('discord.js');
 const { PREFIX } = require('../../config');
 
 module.exports = (client, message) => {
+  if (message.channel.type === "dm") return client.emit("directMessage", message);
   if (message.content.startsWith(`🖕`))  message.channel.send("Mais il est où le respect ??");
 
   if (!message.content.startsWith(PREFIX) || message.author.bot) return;

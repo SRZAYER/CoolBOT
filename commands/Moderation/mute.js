@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const ms = require("ms");
 const { MessageEmbed } = require('discord.js');
 
@@ -43,14 +44,4 @@ module.exports.run = async (client, message, args) => {
   client.channels.cache.get("757260841031565497").send(embed);
 };
 
-module.exports.help = {
-  name: "mute",
-  aliases: ["mute"],
-  category: 'moderation',
-  description: "Mute un utilisateur",
-  cooldown: 3,
-  usage: "<@user> <time>",
-  isUserAdmin: true,
-  permissions: true,
-  args: true,
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.MUTE;
