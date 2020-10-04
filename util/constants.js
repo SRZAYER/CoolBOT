@@ -1,5 +1,18 @@
 const MESSAGES = {
  COMMANDS: {
+  ADMIN: {
+   EVAL: {
+    name: "eval",
+    aliases: ["eval"],
+    category: 'admin',
+    description: "Renvoie un code javascript testé",
+    cooldown: 10,
+    usage: "<code_to_test>",
+    isUserAdmin: false,
+    permissions: true,
+    args: true,
+   }
+  },
   MISC: {
    SAY: {
     name: "say",
@@ -41,6 +54,17 @@ const MESSAGES = {
     category: 'misc',
     description: "Help sur une commande ou plusieurs !",
     cooldown: 5,
+    usage: "<command_name>",
+    isUserAdmin: false,
+    permissions: false,
+    args: false,
+   },
+   WEJDENE: {
+    name: "wejdene",
+    aliases: ['anissa'],
+    category: 'misc',
+    description: "WEJDENE",
+    cooldown: 600,
     usage: "<command_name>",
     isUserAdmin: false,
     permissions: false,
