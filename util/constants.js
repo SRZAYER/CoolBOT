@@ -1,12 +1,23 @@
 const MESSAGES = {
  COMMANDS: {
   ADMIN: {
+   CONFIG: {
+    name: "config",
+    aliases: ["config"],
+    category: 'admin',
+    description: "Modifier la base de donnée",
+    cooldown: 3,
+    usage: "<key> <value>",
+    isUserAdmin: false,
+    permissions: true,
+    args: true,
+   },
    EVAL: {
     name: "eval",
     aliases: ["eval"],
     category: 'admin',
     description: "Renvoie un code javascript testé",
-    cooldown: 10,
+    cooldown: 3,
     usage: "<code_to_test>",
     isUserAdmin: false,
     permissions: true,

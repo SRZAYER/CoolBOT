@@ -1,16 +1,15 @@
 const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
-const { PREFIX } = require("../../config");
 const { readdirSync } = require("fs");
 const categoryList = readdirSync('./commands');
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings) => {
   if (!args.length) {
     const embed = new MessageEmbed()
       .setAuthor("Commandes de CoolBOT", client.user.avatarURL())
       .setColor("#a38659")
       .setThumbnail(client.user.avatarURL())
-      .addField("Plus d'infos, tapez :",`\`${PREFIX}help <command_name>\`.`)
+      .addField("Plus d'infos, tapez :",`\`${settings.prefix}help <command_name>\`.`)
       .setTimestamp()
       .setFooter(client.user.username);
 
@@ -31,7 +30,7 @@ module.exports.run = (client, message, args) => {
       .setThumbnail(client.user.avatarURL())
       .setTitle(`\`${command.help.name}\``)
       .addField("Description", `${command.help.description} (Cooldown: ${command.help.cooldown} secs)`)
-      .addField("Utilisation", command.help.usage ? `${PREFIX}${command.help.name} ${command.help.usage}` : `${PREFIX}${command.help.name}`, true)
+      .addField("Utilisation", command.help.usage ? `${settings.prefix}${command.help.name} ${command.help.usage}` : `${settings.prefix}${command.help.name}`, true)
       .setTimestamp()
       .setFooter(client.user.username)
 
